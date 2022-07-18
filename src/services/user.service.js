@@ -10,4 +10,14 @@ const login = async ({ email, password }) => {
   return token;
 };
 
-module.exports = { login };
+const register = async ({ displayName, email, password, image }) => { 
+  const user = await User.findOne({ where: { email } });
+  if (user) {
+    return true;
+  }
+  await User.create({ displayName, email, password, image });
+  const token = createToken(email);
+  return token;
+};
+
+module.exports = { login, register };
