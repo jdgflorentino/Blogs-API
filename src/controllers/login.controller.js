@@ -12,4 +12,4 @@ const login = async (req, res) => {
   return res.status(200).json({ token: isValid });
 };
 
-module.exports = { login };
+module.exports = login;
