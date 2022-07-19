@@ -20,4 +20,9 @@ const register = async ({ displayName, email, password, image }) => {
   return token;
 };
 
-module.exports = { login, register };
+const getAllUser = async () => {
+  const users = await User.findAll({ attributes: ['id', 'displayName', 'email', 'image'] });
+  return users;
+};
+
+module.exports = { login, register, getAllUser };
