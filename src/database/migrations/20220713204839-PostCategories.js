@@ -12,6 +12,7 @@ module.exports = {
           model: 'BlogPosts',
           key: 'id',
         },
+        primaryKey: true,
       },
       categoryId: {
         allowNull: false,
@@ -22,6 +23,7 @@ module.exports = {
           model: 'Categories',
           key: 'id',
         },
+        primaryKey: true,
       },
       }
     );
