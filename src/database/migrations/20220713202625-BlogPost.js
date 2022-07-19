@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('BlogPosts', {
@@ -28,21 +26,18 @@ module.exports = {
         onDelete: 'cascade',
         onUpdate: 'cascade',
       },
-      createdAt: {
+      published: {
         allowNull: false,
         type: Sequelize.DATE,
-        field:'published',
       },
-      updatedAt: {
+      updated: {
         allowNull: false,
         type: Sequelize.DATE,
-        field:'updated',
       },
     });
   },
 
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('BlogPosts');
-
   }
 };
